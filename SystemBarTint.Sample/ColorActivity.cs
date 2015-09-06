@@ -26,6 +26,7 @@
 //import com.chiralcode.colorpicker.ColorPicker;
 //import com.readystatesoftware.systembartint.SystemBarTintManager;
 using Android.App;
+using Android.Content;
 using Android.Graphics;
 using Android.OS;
 using Android.Widget;
@@ -35,6 +36,7 @@ using Com.ReadystateSoftware.SystembarTint;
 namespace SystemBarTint.Sample
 {
     [Activity(Label = "SystemBarTintColorActivity.Net", Theme = "@style/FullBleedTheme")]
+    [IntentFilter(new[] { Intent.ActionMain }, Categories = new string[] { "com.readystatesoftware.systembartint.SAMPLE" })]
     public class ColorActivity : Activity
     {
 

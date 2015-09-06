@@ -88,27 +88,27 @@ namespace SystemBarTint.Sample
                 mIntents.Clear();
 
                 Intent mainIntent = new Intent(Intent.ActionMain, null);
-                //mainIntent.AddCategory("com.readystatesoftware.systembartint.SAMPLE");
+                mainIntent.AddCategory("com.readystatesoftware.systembartint.SAMPLE");
                 //mainIntent.AddCategory("systembartint.sample");
-                
-                //PackageManager pm = mContext.PackageManager;
-                //IList<ResolveInfo> matches = pm.QueryIntentActivities(mainIntent, 0);
-                //foreach (ResolveInfo match in matches)
-                //{
-                //    Intent intent = new Intent();
-                //    intent.SetClassName(match.ActivityInfo.PackageName,
-                //            match.ActivityInfo.Name);
-                //    string name = match.LoadLabel(pm);
-                //    mNames.Add(name);
-                //    mIntents.Add(name, intent);
-                //}
 
-                mNames.Add("DefaultActivity");
-                mIntents.Add("DefaultActivity", new Intent(mContext, typeof(DefaultActivity)));
-                mNames.Add("ColorActivity");
-                mIntents.Add("ColorActivity", new Intent(mContext, typeof(ColorActivity)));
-                mNames.Add("MatchActionBarActivity");
-                mIntents.Add("MatchActionBarActivity", new Intent(mContext, typeof(MatchActionBarActivity)));
+                PackageManager pm = mContext.PackageManager;
+                IList<ResolveInfo> matches = pm.QueryIntentActivities(mainIntent, 0);
+                foreach (ResolveInfo match in matches)
+                {
+                    Intent intent = new Intent();
+                    intent.SetClassName(match.ActivityInfo.PackageName,
+                            match.ActivityInfo.Name);
+                    string name = match.LoadLabel(pm);
+                    mNames.Add(name);
+                    mIntents.Add(name, intent);
+                }
+
+                //mNames.Add("DefaultActivity");
+                //mIntents.Add("DefaultActivity", new Intent(mContext, typeof(DefaultActivity)));
+                //mNames.Add("ColorActivity");
+                //mIntents.Add("ColorActivity", new Intent(mContext, typeof(ColorActivity)));
+                //mNames.Add("MatchActionBarActivity");
+                //mIntents.Add("MatchActionBarActivity", new Intent(mContext, typeof(MatchActionBarActivity)));
 
                 NotifyDataSetChanged();
             }

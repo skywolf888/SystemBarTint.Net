@@ -21,6 +21,7 @@
 
 //import com.readystatesoftware.systembartint.SystemBarTintManager;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Com.ReadystateSoftware.SystembarTint;
 
@@ -28,6 +29,7 @@ using Com.ReadystateSoftware.SystembarTint;
 namespace SystemBarTint.Sample
 {
     [Activity(Label = "DefaultActivity.Net", Theme = "@style/FullBleedTheme")]
+    [IntentFilter(new[] { Intent.ActionMain }, Categories = new string[] { "com.readystatesoftware.systembartint.SAMPLE" })]
     public class DefaultActivity : Activity
     {
 

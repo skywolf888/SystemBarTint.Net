@@ -53,7 +53,7 @@
     <None Include="Resources\AboutResources.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Com\ReadystateSoftware\SystembarTint\SystemBarTintManager.cs" />
+    <Compile Include="SystemBarTintManager.cs" />
   </ItemGroup>
   <ItemGroup>
     <AndroidResource Include="Resources\Values\Strings.xml" />

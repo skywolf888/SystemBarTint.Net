@@ -38,6 +38,7 @@
 //import java.lang.reflect.Method;
 
 
+using Android.Annotation;
 using Android.App;
 using Android.Content;
 using Android.Content.Res;
@@ -122,7 +123,8 @@ namespace Com.ReadystateSoftware.SystembarTint
          * @param activity The host activity.
          */
         ////@TargetApi(19)
-
+        [Android.Runtime.Register("android/annotation/TargetApi", DoNotGenerateAcw = true)]
+        [TargetApi(Value=19)]
         public SystemBarTintManager(Activity activity)
         {
 
@@ -305,6 +307,7 @@ namespace Com.ReadystateSoftware.SystembarTint
          * @param alpha The alpha to use
          */
         //@TargetApi(11)
+        [TargetApi(Value = 11)]
         public void setStatusBarAlpha(float alpha)
         {
             if (mStatusBarAvailable && Build.VERSION.SdkInt >= BuildVersionCodes.Honeycomb)
@@ -345,6 +348,7 @@ namespace Com.ReadystateSoftware.SystembarTint
          * @param drawable The drawable to use as the background, or null to remove it.
          */
         //@SuppressWarnings("deprecation")
+        [SuppressWarnings(Value = new string[] { "deprecation" })]
         public void setNavigationBarTintDrawable(Drawable drawable)
         {
             if (mNavBarAvailable)
@@ -359,6 +363,7 @@ namespace Com.ReadystateSoftware.SystembarTint
          * @param alpha The alpha to use
          */
         //@TargetApi(11)
+        [TargetApi(Value = 11)]
         public void setNavigationBarAlpha(float alpha)
         {
             if (mNavBarAvailable && Build.VERSION.SdkInt >= BuildVersionCodes.Honeycomb)
@@ -472,6 +477,7 @@ namespace Com.ReadystateSoftware.SystembarTint
             }
 
             ////@TargetApi(14)
+            [TargetApi(Value=14)]
             private int getActionBarHeight(Context context)
             {
                 int result = 0;
@@ -485,6 +491,7 @@ namespace Com.ReadystateSoftware.SystembarTint
             }
 
             ////@TargetApi(14)
+            [TargetApi(Value = 14)]
             private int getNavigationBarHeight(Context context)
             {
                 Resources res = context.Resources;
@@ -509,6 +516,7 @@ namespace Com.ReadystateSoftware.SystembarTint
             }
 
             //@TargetApi(14)
+            [TargetApi(Value = 14)]
             private int getNavigationBarWidth(Context context)
             {
                 Resources res = context.Resources;
@@ -524,6 +532,7 @@ namespace Com.ReadystateSoftware.SystembarTint
             }
 
             //@TargetApi(14)
+            [TargetApi(Value = 14)]
             private bool hasNavBar(Context context)
             {
                 Resources res = context.Resources;
@@ -560,6 +569,7 @@ namespace Com.ReadystateSoftware.SystembarTint
             }
 
             //@SuppressLint("NewApi")
+            [SuppressLint(Value=new string[]{"NewApi"})]
             private float getSmallestWidthDp(Activity activity)
             {
                 DisplayMetrics metrics = new DisplayMetrics();

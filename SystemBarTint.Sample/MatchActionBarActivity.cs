@@ -23,16 +23,19 @@
 //import android.view.Window;
 //import android.view.WindowManager;
 
+using Android.Annotation;
 //import com.readystatesoftware.systembartint.SystemBarTintManager;
 using Android.App;
+using Android.Content;
 using Android.OS;
 using Android.Views;
 using Com.ReadystateSoftware.SystembarTint;
- 
+
 
 namespace SystemBarTint.Sample
 {
     [Activity(Label = "MatchActionBarActivity.Net", Theme = "@style/ActionBarTheme")]
+    [IntentFilter(new[] { Intent.ActionMain }, Categories = new string[] { "com.readystatesoftware.systembartint.SAMPLE" })]
     public class MatchActionBarActivity : Activity
     {
 
@@ -54,6 +57,7 @@ namespace SystemBarTint.Sample
         }
 
         //@TargetApi(19) 
+        [TargetApi(Value=19)]
         private void setTranslucentStatus(bool on)
         {
             Android.Views.Window win = Window;
